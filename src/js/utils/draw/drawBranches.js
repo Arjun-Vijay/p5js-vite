@@ -1,24 +1,26 @@
-import { calculateBranchWidth, calculateBranchHeight } from "./utils";
+import { calculateBranchWidth, calculateBranchHeight } from "../calculate";
 
-const recursiveBranch = (height, level, angle, p) => {
+const drawBranches = (level, angle, p) => {
   let branchWidth = calculateBranchWidth(level);
   p.strokeWeight(branchWidth);
 
-  // Start coloring leaves green after the 3rd level
-  if (level < 3) {
+  let height = calculateBranchHeight(level);
+  console.log(height);
+
+  // Start coloring leaves green after the 5th level
+  if (level < 5) {
     p.stroke(30, 255, 150); // Brown
   } else {
-    p.stroke(100 + level * 10, 255, 255); // Green
+    p.stroke(100 + level * 7, 255, 255); // Green
   }
 
-  height = calculateBranchHeight(height);
   if (height > 2) {
     // Draw right branches
     p.push();
     p.rotate(angle);
     p.line(0, 0, 0, -height);
     p.translate(0, -height);
-    recursiveBranch(height, level + 1, angle, p);
+    drawBranches(level + 1, angle, p);
     p.pop();
 
     // Draw left branches
@@ -26,9 +28,9 @@ const recursiveBranch = (height, level, angle, p) => {
     p.rotate(-angle);
     p.line(0, 0, 0, -height);
     p.translate(0, -height);
-    recursiveBranch(height, level + 1, angle, p);
+    drawBranches(level + 1, angle, p);
     p.pop();
   }
 };
 
-export default recursiveBranch;
+export default drawBranches;

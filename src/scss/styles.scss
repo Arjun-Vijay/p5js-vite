@@ -1,0 +1,13 @@
+@import "bootstrap/scss/bootstrap";
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+#tree-canvas {
+  display: block;
+  width: 710px;
+  height: 400px;
+}
