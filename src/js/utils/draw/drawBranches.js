@@ -5,7 +5,6 @@ const drawBranches = (level, angle, p) => {
   p.strokeWeight(branchWidth);
 
   let height = calculateBranchHeight(level);
-  console.log(height);
 
   // Start coloring leaves green after the 5th level
   if (level < 5) {

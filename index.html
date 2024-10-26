@@ -1,67 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="/src/scss/styles.scss" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
     <title>Recursive Tree</title>
   </head>
 
   <body>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Recursive Tree</h1>
-    </div>
-    <div class="container text-center">
-      <div class="row">
-        <div id="form-container" class="col">
-          <form>
-            <!-- Branch Width -->
-            <div class="form-floating mb-3">
-              <input
-                type="number"
-                class="form-control"
-                id="branchWidthInput"
-                value="10.0"
-                min="0"
-                max="50"
-                step="0.2"
-              />
-              <label for="branchWidthInput">Branch Width</label>
-            </div>
-            <!-- Branch Height -->
-            <div class="form-floating mb-3">
-              <input
-                type="number"
-                class="form-control"
-                id="branchHeightInput"
-                value="100"
-                min="10"
-                max="150"
-                step="1"
-              />
-              <label for="branchHeightInput">Branch Height</label>
-            </div>
-            <label for="branchAngleRange" class="form-label"
-              >Expand Tree Branches</label
-            >
-            <input
-              type="range"
-              class="form-range"
-              value="350"
-              min="0"
-              max="710"
-              id="branchAngleRange"
-            />
-            <div class="" role="group" aria-label="Reset Button">
-              <button type="reset" class="btn btn-primary me-3">Reset</button>
-            </div>
-          </form>
-        </div>
-        <div class="col">
-          <div id="tree-canvas"></div>
-        </div>
-      </div>
-    </div>
-    <script type="module" src="./src/js/treeCanvas.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

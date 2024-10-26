@@ -1,6 +1,5 @@
-const calculateBranchAngle = (width) => {
-  const slider = document.getElementById("branchAngleRange");
-  let angle = (slider.value / width) * 90;
+const calculateBranchAngle = (width, sliderValue) => {
+  let angle = (sliderValue / width) * 90;
   return Math.min(angle, 90);
 };
 
